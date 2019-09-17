@@ -1,9 +1,6 @@
 export class Customer<T> {
-    id: number;
 
-    constructor(id: number) {
-        this.id = id;
-    }
+    constructor(public id: number) {}
 
     fooBar(foo: T): string {
         setTimeout(() => console.log('ID ist', this.id), 2000);
@@ -14,7 +11,6 @@ Die ID ist ${this.id}!
 
         // return 'Hallo\nWelt! Die ID ist ' + this.id + '!';
     }
-
 
     foo(bar: string | number) {
         if(typeof bar === 'number') {
