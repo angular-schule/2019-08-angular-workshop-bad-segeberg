@@ -29,4 +29,12 @@ export class DashboardComponent implements OnInit {
     ];
   }
 
+  doRateUp(book: Book) {
+    console.log(book);
+  }
+
+  doRateDown(book: Book) {
+    console.log(book);
+  }
+
 }
