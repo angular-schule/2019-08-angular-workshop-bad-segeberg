@@ -1,12 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardComponent } from './dashboard.component';
-import { BookComponent } from '../book/book.component';
 import { Book } from '../shared/book';
 import { BookRatingService } from '../shared/book-rating.service';
-import { when } from 'q';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-fdescribe('DashboardComponent', () => {
+describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
 
@@ -32,7 +31,8 @@ fdescribe('DashboardComponent', () => {
       providers: [
         // Abhängigkeit ersetzen: statt echtem Service immer ratingMock verwenden
         { provide: BookRatingService, useValue: ratingMock }
-      ]
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
