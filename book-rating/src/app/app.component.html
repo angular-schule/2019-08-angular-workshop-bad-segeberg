@@ -1,6 +1,11 @@
 <div class="container">
   <h1>{{ title }}</h1>
 
+  <div class="btn-group">
+    <a class="btn btn-link btn-sm" routerLink="/books">Dashboard</a>
+    <a class="btn btn-link btn-sm" routerLink="/books/create">Create</a>
+  </div>
+
   <router-outlet></router-outlet>
 
 </div>
