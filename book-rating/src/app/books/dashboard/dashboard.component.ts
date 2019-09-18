@@ -32,10 +32,12 @@ export class DashboardComponent implements OnInit {
 
   doRateUp(book: Book) {
     const ratedBook = this.rs.rateUp(book);
+    this.updateList(ratedBook);
   }
 
   doRateDown(book: Book) {
-    console.log(book);
+    const ratedBook = this.rs.rateDown(book);
+    this.updateList(ratedBook);
   }
 
   updateList(book: Book) {
@@ -43,5 +45,7 @@ export class DashboardComponent implements OnInit {
       .map(b => b.isbn === book.isbn ? book : b)
       .sort((a, b) => b.rating - a.rating);
   }
+
+
 
 }
