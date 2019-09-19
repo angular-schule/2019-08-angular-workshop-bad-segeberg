@@ -3,8 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   // "pathMatch: full", damit Pfad nicht als Präfix der anderen Ruten interpretiert wird
-  // nötig hier bei leerem Pfad mit Resdirect
-  { path: '', redirectTo: 'books', pathMatch: 'full' }
+  // nötig hier bei leerem Pfad mit Redirect
+  { path: '', redirectTo: 'books', pathMatch: 'full' },
+  { path: 'books', loadChildren: () => import('./books/books.module').then(m => m.BooksModule) }
 ];
 
 @NgModule({

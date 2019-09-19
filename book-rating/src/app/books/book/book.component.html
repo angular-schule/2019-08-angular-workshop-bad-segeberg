@@ -17,6 +17,7 @@
     <button class="btn btn-success mr-2" data-testid="rateUpBtn" (click)="doRateUp()"> + </button>
     <button class="btn btn-danger mr-2" (click)="doRateDown()"> – </button>
 
+    <!-- routerLink, weil href die Seite neu lädt -->
     <a [routerLink]="['/books', book.isbn]">Details</a>
   </div>
 </div>

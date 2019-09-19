@@ -5,9 +5,9 @@ import { BookDetailsComponent } from './book-details/book-details.component';
 import { CreateBookContainerComponent } from './create-book-container/create-book-container.component';
 
 const routes: Routes = [
-  { path: 'books', component: DashboardComponent },
-  { path: 'books/create', component: CreateBookContainerComponent },
-  { path: 'books/:isbn', component: BookDetailsComponent }
+  { path: '', component: DashboardComponent },
+  { path: 'create', component: CreateBookContainerComponent },
+  { path: ':isbn', component: BookDetailsComponent }
 ];
 
 @NgModule({
