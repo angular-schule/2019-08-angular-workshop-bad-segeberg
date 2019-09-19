@@ -33,7 +33,13 @@ export class BookFormComponent implements OnInit {
   }
 
   submit() {
-    this.submitForm.emit(/* ... */);
+    const newBook: Book = {
+      ...this.bookForm.value,
+      rating: 1
+    };
+
+    this.submitForm.emit(newBook);
+    // this.bookForm.reset();
   }
 
 }
