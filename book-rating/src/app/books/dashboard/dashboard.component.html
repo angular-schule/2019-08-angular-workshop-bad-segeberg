@@ -1,7 +1,7 @@
 <br-counter></br-counter>
 
 
-<ng-container *ngIf="books">
+<ng-container *ngIf="books$ | async as books">
   <br-book
   *ngFor="let b of books"
   [book]="b"
@@ -12,3 +12,7 @@
     <strong>Anzahl Bücher:</strong> {{ books.length }}
   </p>
 </ng-container>
+
+
+
+<p *ngIf="loading$ | async">Loading...</p>
