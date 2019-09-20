@@ -7,7 +7,7 @@ import { Book } from './book';
 })
 export class BookStoreService {
 
-  private api = 'https://api.angular.schule/secure';
+  private api = 'https://api.angular.schule';
 
   constructor(private http: HttpClient) { }
 
@@ -21,5 +21,9 @@ export class BookStoreService {
 
   create(book: Book) {
     return this.http.post(`${this.api}/books`, book, { responseType: 'text' });
+  }
+
+  search(term: string) {
+    return this.http.get<Book[]>(`${this.api}/books/search/${term}`);
   }
 }
