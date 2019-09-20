@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
-import { mergeMap, concatMap, switchMap, exhaustMap } from 'rxjs/operators';
+import { map, mergeMap, concatMap, switchMap, exhaustMap } from 'rxjs/operators';
 
 import { ExerciseService } from '../exercise.service';
 
@@ -20,6 +20,9 @@ export class HigherorderComponent implements OnInit {
 
     /******************************/
 
+    this.result$ = this.source$.pipe(
+      exhaustMap(tier => this.es.echo(tier))
+    );
 
 
     /******************************/
