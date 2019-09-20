@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'create', component: CreateBookContainerComponent },
   { path: 'search', component: SearchComponent },
-  { path: ':isbn', component: BookDetailsComponent, canActivate: [IsAuthorizedGuard] }
+  { path: ':isbn', component: BookDetailsComponent }
 ];
 
 @NgModule({
