@@ -3,3 +3,7 @@
 <form class="form-group" [formGroup]="searchForm">
   <input type="text" class="form-control form-control-lg" formControlName="search">
 </form>
+
+<ul>
+  <li *ngFor="let b of results$ | async">{{ b.title }}</li>
+</ul>
